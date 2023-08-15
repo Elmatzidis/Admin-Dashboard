@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lora", sans-serif;
+  min-height: 100vh;
+}
+
+.main-content {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-rows: 2fr 6fr 2fr;
+}
+
+.menu {
+  background-color: #1992D4;
+  grid-column: 1/1;
+  grid-row: 1/4;
+}
+
+.header {
+  grid-column: 2/4;
+  grid-row: 1;
+  background-color: #ffffff;
+}
+
+.project-container {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  background-color: #E2E8F0;
+}
+
+.announcement-trending {
+  grid-column: 3/4;
+  grid-row: 2/4;
+  background-color: #E2E8F0;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile img {
+  width: clamp(25px, 45px, 50px);
+  height: clamp(25px, 45px, 50px);
+}
+
+.profile .profile-pic {
+  border-radius: 50%;
+}
+
+.search label img {
+  width: clamp(25px, 45px, 50px);
+  height: clamp(25px, 45px, 50px);
+}
+
+.search{
+    position: relative;
+    left: 50px;
+}
+
+.search input{
+    width: clamp(300px,500px,700px);
+    height:clamp(10px, 25px, 30px) ;
+    border-radius: 10px;
+    background-color: ;
+}
