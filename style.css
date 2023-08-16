@@ -60,11 +60,13 @@ li {
   position: relative;
   left: 40px;
   font-size: 1.4em;
-  min-width: 280px;
 }
 
 .header {
   grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1.5fr;
   background-color: #ffffff;
   box-shadow: 0px 3px 30px -15px #000;
   z-index: 2;
@@ -79,25 +81,10 @@ li {
 .announcement-trending {
   grid-column: 3/4;
   grid-row: 2/4;
-  background-color: #e2e8f0;
-}
-
-.top-header,
-.bottom-header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
-  min-width: 100%;
-}
-
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 50px auto auto;
+  grid-template-columns: 1fr;
+  font-size: clamp(0.5em, 10vw, .9em);
 }
 
 .profile img {
@@ -123,12 +110,13 @@ li {
   position: relative;
   width: 600px;
   left: 70px;
-  flex: 1;
+  top: 10px;
+  grid-column: 1/2;
 }
 
 .search .search-input {
   width: 100%;
-  max-width: 550px;
+  max-width: 500px;
   min-width: 100px;
   height: 30px;
   border-radius: 10px;
@@ -138,24 +126,23 @@ li {
 }
 
 .profile {
-  max-width: 400px;
-  min-width: 300px;
-  min-height: 50px;
-  max-height: 70px;
-  position: relative;
-  top: 10px;
-  right: 30px;
+  min-width: 100px;
+  max-width: 100%;
+  grid-column: 3/4;
   flex: 1 1 auto;
   display: flex;
+  justify-content: end;
   gap: 60px;
-  align-items: center;
-  gap: 20px;
+  position: relative;
+  top: 10px;
+  right: 0px;
 }
 
 .profile span {
   position: relative;
   top: 2px;
   font-size: 1.3em;
+  white-space: nowrap;
 }
 
 .profile > img {
@@ -164,12 +151,11 @@ li {
 }
 
 .welcome-user {
-  max-width: 600px;
-  min-width: 100px;
-  display: flex;
   position: relative;
   left: 75px;
-  flex: 5 1 auto;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
 }
 
 .welcome-user img {
@@ -190,16 +176,18 @@ li {
 }
 
 .btns-container {
-  max-width: 400px;
+  max-width: 450px;
   min-width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
+  grid-column: 3/4;
+  grid-row: 2/3;
   margin-right: 40px;
 }
 .btns {
-  font-size: clamp(1em, 1.5vw, 1.3em);
+  font-size: 1.3em;
   display: flex;
   margin-right: 30px;
   padding: 5px;
@@ -216,15 +204,16 @@ li {
   transition: 150ms;
 }
 
-.btns:hover {
+button:hover {
   background-color: #1270a3;
 }
 
 .project-container {
+  font-size: clamp(0.5em, 10vw, 1em);
   position: relative;
-  left: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -238,19 +227,18 @@ li {
 
 .project {
   position: relative;
-  left: 10%;
+  left: 5%;
   display: flex;
   flex-direction: column;
   max-width: 500px;
   min-width: 250px;
-  max-height: 250px;
+  max-height: 300px;
   min-height: 250px;
   background-color: #fff;
   border-radius: 10px;
-  overflow: hidden;
   text-wrap: balance;
   justify-content: center;
-  padding: 20px;
+  padding: 25px;
   font-size: 1em;
   border-left: 10px solid;
   border-color: #f0b429;
@@ -283,4 +271,33 @@ li {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.announcement-trending h1{
+  position: relative;
+  top: 25px;
+}
+
+.announcement-content {
+  max-height: 430px;
+  min-height: 430px;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.announcement h3{
+  margin-bottom: 5px;
+}
+
+.announcement p{
+  color: #717171;
+  margin-bottom: 10px;
+}
+
+.announcement:nth-child(2) {
+  margin: 30px 0;
 }
