@@ -18,7 +18,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
-  grid-template-rows: 2fr 6fr 2fr;
+  grid-template-rows: 1fr 6fr 2fr;
 }
 
 .menu {
@@ -64,9 +64,10 @@ li {
 
 .header {
   grid-column: 2/4;
+  grid-row: 1/2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1.5fr;
+  grid-template-rows: repeat(2,50px);
   background-color: #ffffff;
   box-shadow: 0px 3px 30px -15px #000;
   z-index: 2;
@@ -84,10 +85,11 @@ li {
   display: grid;
   grid-template-rows: 50px auto auto;
   grid-template-columns: 1fr;
-  font-size: clamp(0.5em, 10vw, .9em);
+  gap: 80px;
+  margin-right: 25px;
 }
 
-.profile img {
+.profile img{
   width: 35px;
   height: 35px;
 }
@@ -135,7 +137,7 @@ li {
   gap: 60px;
   position: relative;
   top: 10px;
-  right: 0px;
+  right: 100px;
 }
 
 .profile span {
@@ -279,14 +281,15 @@ button:hover {
 }
 
 .announcement-content {
-  max-height: 430px;
+  max-height: 450px;
   min-height: 430px;
   width: 100%;
+  bottom: 60px;
   padding: 30px;
   position: relative;
-  top: 20px;
   background-color: #fff;
   border-radius: 10px;
+  overflow: auto;
 }
 
 .announcement h3{
@@ -296,8 +299,48 @@ button:hover {
 .announcement p{
   color: #717171;
   margin-bottom: 10px;
+  font-size: 0.9em;
 }
 
 .announcement:nth-child(2) {
   margin: 30px 0;
 }
+
+.trending-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 470px;
+  min-height: 430px;
+  background-color: #fff;
+  border-radius: 10px;
+  gap: 30px;
+  position: relative;
+  bottom: 110px;
+  font-size: 1.3em;
+}
+.trending-h1{
+  position: relative;
+  bottom: 120px;
+}
+
+
+.trending{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.trending p{
+  color: #717171;
+  margin-left: 15px;
+}
+
+.trending img{
+  margin-right: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+} 
